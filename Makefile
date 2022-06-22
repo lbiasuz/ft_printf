@@ -6,15 +6,15 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 22:11:38 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/05/30 23:44:50 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/06/22 20:42:30 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libftprintf.a
 
-CFLAGS	=	-Wall -Wextra -Werror -g3
+CFLAGS	=	-Wall -Wextra -Werror
 
-SRC		=	ft_printf.c
+SRC		=	ft_printf.c ft_converters.c
 
 HEAD	=	ft_printf.h
 
@@ -30,6 +30,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $<
 
 clean:
+	make clean -C libft
 	rm	-f $(NAME)
 
 fclean: clean
