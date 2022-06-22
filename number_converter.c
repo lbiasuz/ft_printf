@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:18:27 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/06/21 23:35:43 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/06/21 23:46:10 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,4 +112,3 @@ char	*ft_ultob(unsigned long long nb, char *base)
 	output[--size] = '0';
 	return (output);
 }
-

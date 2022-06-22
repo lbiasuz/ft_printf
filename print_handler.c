@@ -6,12 +6,11 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:26:37 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/06/21 23:28:26 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/06/21 23:44:48 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	handle_print_conversion(va_list args, int cflag)
 {
