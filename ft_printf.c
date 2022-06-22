@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:56:33 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/06/20 19:42:39 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/06/21 23:28:31 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_printf(const char *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			printed += handle_print(args, *str);
+			printed += handle_print_conversion(args, *str);
 			str++;
 		}
 		else

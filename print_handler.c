@@ -6,14 +6,14 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:26:37 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/06/20 23:15:22 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/06/21 23:28:26 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-int	handle_print(va_list args, int cflag)
+int	handle_print_conversion(va_list args, int cflag)
 {
 	char	*value;
 	int		len;
@@ -22,15 +22,15 @@ int	handle_print(va_list args, int cflag)
 	if (cflag == 'd' || cflag == 'i')
 		value = ft_itoa(va_arg(args, int));
 	else if (cflag == 'u')
-		value = utoa(va_arg(args, unsigned int));
+		value = ft_utoa(va_arg(args, unsigned int));
 	else if (cflag == 'x')
-		value = itoh(va_arg(args, int), "0123456789abcdef");
+		value = ft_itob(va_arg(args, int), "0123456789abcdef");
 	else if (cflag == 'X')
-		value = itoh(va_arg(args, int), "0123456789ABCDEF");
+		value = ft_itob(va_arg(args, int), "0123456789ABCDEF");
 	else if (cflag == 'p')
-		value = ultoh(va_arg(args, unsigned long long), "0123456789abcdef");
+		value = ft_ultob(va_arg(args, unsigned long long), "0123456789abcdef");
 	else if (cflag == 's' || cflag == 'c')
-		value = atoa(args, cflag);
+		value = alloc_char_or_string(args, cflag);
 	else if (cflag == '%')
 		value = ft_strdup("%");
 	len = ft_strlen(value);
@@ -40,7 +40,7 @@ int	handle_print(va_list args, int cflag)
 	return (len);
 }
 
-char	*atoa(va_list list, int type_flag)
+char	*alloc_char_or_string(va_list list, int type_flag)
 {
 	char	*value;
 
