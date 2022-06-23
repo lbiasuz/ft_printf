@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:56:33 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/06/22 20:27:34 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/06/22 23:28:19 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ int	handle_print_conversion(va_list args, int cflag)
 	else if (cflag == 'u')
 		value = ft_utoa(va_arg(args, unsigned int));
 	else if (cflag == 'x')
-		value = ft_itob(va_arg(args, int), "0123456789abcdef");
+		value = ft_itob(va_arg(args, unsigned int), "0123456789abcdef");
 	else if (cflag == 'X')
-		value = ft_itob(va_arg(args, int), "0123456789ABCDEF");
+		value = ft_itob(va_arg(args, unsigned int), "0123456789ABCDEF");
 	else if (cflag == 'p')
 		value = ft_ultob(va_arg(args, unsigned long long), "0123456789abcdef");
 	else if (cflag == 's' || cflag == 'c')
@@ -76,6 +76,12 @@ char	*alloc_char_or_string(va_list list, int type_flag)
 		value[1] = 0;
 	}
 	else if (type_flag == 's')
-		value = ft_strdup(va_arg(list, char *));
+	{
+		value = va_arg(list, char *);
+		if (!value)
+			value = ft_strdup("(null)");
+		else
+			value = ft_strdup(value);
+	}
 	return (value);
 }
