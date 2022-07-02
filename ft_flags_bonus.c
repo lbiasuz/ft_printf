@@ -6,11 +6,25 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 21:38:45 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/02 12:20:19 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/02 13:53:45 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
+
+char	*get_flags(char *str)
+{
+	unsigned int lenght;
+
+	lenght = 0;
+	while (!ft_strchr("csiduxX%", str[lenght]))
+	{
+		if (!ft_strchr(" -+#.0123456789", str[lenght])
+			break;
+		lenght++;
+	}
+	return (ft_substr(lenght, 0, lenght + 1));
+}
 
 char	*ft_precision_flag(char *str, char *flags)
 {
