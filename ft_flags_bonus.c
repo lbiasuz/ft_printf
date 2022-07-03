@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 21:38:45 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/02 13:53:45 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/03 08:44:37 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*get_flags(char *str)
 	lenght = 0;
 	while (!ft_strchr("csiduxX%", str[lenght]))
 	{
-		if (!ft_strchr(" -+#.0123456789", str[lenght])
-			break;
+		if (!ft_strchr(" -+#.0123456789", str[lenght]))
+			return (NULL);
 		lenght++;
 	}
 	return (ft_substr(lenght, 0, lenght + 1));

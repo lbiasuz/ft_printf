@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:56:33 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/06/22 23:28:19 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/03 11:30:23 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int	handle_print_conversion(va_list args, int cflag)
 	else if (cflag == '%')
 		value = ft_strdup("%");
 	len = ft_strlen(value);
+	if (cflag == 'c')
+		len = 1;
 	ft_putstr_fd(value, 1);
 	if (value != NULL)
 		free(value);
