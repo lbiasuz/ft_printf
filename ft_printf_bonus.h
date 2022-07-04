@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:56:31 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/06/30 21:58:49 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/03 23:08:55 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-int		ft_printf(const char *str, ...);
-int		handle_print_conversion(va_list list, int converter);
-char	*ft_utoa(unsigned int nb);
-char	*ft_itob(unsigned int nb, char *base);
-char	*ft_ultob(unsigned long long nb, char *base);
-char	*alloc_char_or_string(va_list list, int type_flag);
+int				ft_printf(const char *str, ...);
+int				handle_print_conversion(va_list list, int converter);
+char			*ft_utoa(unsigned int nb);
+char			*ft_itob(unsigned int nb, char *base);
+char			*ft_ultob(unsigned long long nb, char *base);
+char			*alloc_char_or_string(va_list list, int type_flag);
 unsigned int	long_long_size(unsigned long long nb, int base_len);
 
 #endif

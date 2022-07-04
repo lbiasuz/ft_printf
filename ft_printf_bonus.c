@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 22:56:33 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/02 13:13:49 by lbiasuz          ###   ########.fr       */
+/*   Created: 2022/07/03 23:04:29 by lbiasuz           #+#    #+#             */
+/*   Updated: 2022/07/03 23:09:05 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -23,26 +23,24 @@ int	ft_printf(const char *str, ...)
 	printed = 0;
 	while (*str)
 	{
-		if (*str == '%')
+		if (*(str++) == '%')
 		{
 			str++;
 			flags = get_flags(*str);
 			value = get_converted_value(args, *str);
 			printed += print_value(value, flags);
-			str++;
 		}
 		else
 		{
 			ft_putchar_fd(*str, 1);
 			printed++;
-			str++;
 		}
 	}
 	va_end(args);
 	return (printed);
 }
 
-char*	get_converted_value(va_list args, int cflag)
+char	*get_converted_value(va_list args, int cflag)
 {
 	char	*value;
 	int		len;
