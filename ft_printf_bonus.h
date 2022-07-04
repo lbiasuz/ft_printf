@@ -15,18 +15,6 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-typedef struct s_flags{
-	int	precision;
-	int	min_size;
-	int	left_pad;
-	int	zeroes;
-	int	blank_space;
-	int	sign;
-	int	hashtag;
-	int	converter;
-	
-}	t_flags;
-
 int		ft_printf(const char *str, ...);
 int		handle_print_conversion(va_list list, int converter);
 char	*ft_utoa(unsigned int nb);
