@@ -6,13 +6,13 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 21:38:45 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/03 23:11:34 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/03 23:44:21 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 
-char	*get_flags(char *str)
+char	*get_flags(const char *str)
 {
 	unsigned int	lenght;
 
@@ -23,7 +23,7 @@ char	*get_flags(char *str)
 			return (NULL);
 		lenght++;
 	}
-	return (ft_substr(lenght, 0, lenght + 1));
+	return (ft_substr(str, 0, lenght + 1));
 }
 
 char	*ft_precision_flag(char *str, char *flags)
@@ -81,7 +81,7 @@ char	*ft_hashtag_flag(char *str, char *flags)
 	unsigned int	is_hex;
 
 	is_hex = (ft_strchr(flags, 'x') || ft_strchr(flags, 'X'));
-	if (ft_strchr(flags, '#') && ft_atoi(str) != 0)
+	if (ft_strchr(flags, '#') && *str != '0' && is_hex)
 	{
 		value = ft_strjoin("0x", str);
 		if (ft_strchr(flags, 'X'))

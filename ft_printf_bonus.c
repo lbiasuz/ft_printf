@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 23:04:29 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/03 23:23:05 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/03 23:40:19 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_printf(const char *str, ...)
 		if (*(str++) == '%')
 		{
 			str++;
-			flags = get_flags(*str);
+			flags = get_flags(str);
 			value = get_converted_value(args, *str);
 			printed += print_value(value, flags);
 		}
@@ -43,7 +43,6 @@ int	ft_printf(const char *str, ...)
 char	*get_converted_value(va_list args, int cflag)
 {
 	char	*value;
-	int		len;
 
 	value = NULL;
 	if (cflag == 'd' || cflag == 'i')
@@ -58,7 +57,7 @@ char	*get_converted_value(va_list args, int cflag)
 		value = ft_ultob(va_arg(args, unsigned long long), "0123456789abcdef");
 	else if (cflag == 's' || cflag == 'c')
 		value = alloc_char_or_string(args, cflag);
-	else if (cflag == '%')
+	else
 		value = ft_strdup("%");
 	return (value);
 }
@@ -67,6 +66,7 @@ char	*alloc_char_or_string(va_list list, int type_flag)
 {
 	char	*value;
 
+	value = NULL;
 	if (type_flag == 'c')
 	{
 		value = malloc(sizeof(char) * 2);
