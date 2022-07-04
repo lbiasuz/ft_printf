@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:56:31 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/03 23:08:55 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/03 23:21:35 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,10 @@ char			*ft_itob(unsigned int nb, char *base);
 char			*ft_ultob(unsigned long long nb, char *base);
 char			*alloc_char_or_string(va_list list, int type_flag);
 unsigned int	long_long_size(unsigned long long nb, int base_len);
+char			*get_flags(char *str);
+char			*ft_precision_flag(char *str, char *flags);
+char			*ft_blank_flag(char *str, char *flags);
+char			*ft_sign_flag(char *str, char *flags);
+char			*ft_hashtag_flag(char *str, char *flags);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:18:27 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/06/29 21:41:28 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/03 23:22:20 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 unsigned int	long_long_size(unsigned long long nb, int base_len)
 {
