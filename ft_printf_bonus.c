@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 23:04:29 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/03 23:40:19 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/05 02:31:01 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,10 @@ int	ft_printf(const char *str, ...)
 	printed = 0;
 	while (*str)
 	{
-		if (*(str++) == '%')
+		if (*str == '%')
 		{
-			str++;
-			flags = get_flags(str);
-			value = get_converted_value(args, *str);
+			flags = get_flags(str + 1);
+			value = get_converted_value(args, *(str + 1));
 			printed += print_value(value, flags);
 		}
 		else
@@ -35,6 +34,7 @@ int	ft_printf(const char *str, ...)
 			ft_putchar_fd(*str, 1);
 			printed++;
 		}
+		str += printed + 1;
 	}
 	va_end(args);
 	return (printed);

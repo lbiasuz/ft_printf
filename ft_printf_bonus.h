@@ -16,17 +16,20 @@
 # include <stdarg.h>
 
 int				ft_printf(const char *str, ...);
-char			*get_converted_value(va_list list, int converter);
+int				ft_find_number_flag(char *str);
+unsigned int	long_long_size(unsigned long long nb, int base_len);
 char			*ft_utoa(unsigned int nb);
 char			*ft_itob(unsigned int nb, char *base);
 char			*ft_ultob(unsigned long long nb, char *base);
+char			*get_converted_value(va_list list, int converter);
 char			*alloc_char_or_string(va_list list, int type_flag);
-unsigned int	long_long_size(unsigned long long nb, int base_len);
 char			*get_flags(const char *str);
 char			*ft_precision_flag(char *str, char *flags);
 char			*ft_blank_flag(char *str, char *flags);
 char			*ft_sign_flag(char *str, char *flags);
 char			*ft_hashtag_flag(char *str, char *flags);
+unsigned int	ft_zeroes_flag(char *str);
+char			*ft_lenght_flag(char *str, char *flags);
 char			*pass_value(char *value, char *temp);
 int				print_value(char *value, char *flags);
 
