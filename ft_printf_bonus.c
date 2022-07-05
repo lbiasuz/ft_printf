@@ -6,12 +6,11 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 23:04:29 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/04 22:58:11 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/05 00:24:48 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-#include "stdio.h"
 
 int	ft_printf(const char *str, ...)
 {

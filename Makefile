@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 22:11:38 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/07/05 01:58:23 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/07/05 00:43:48 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,12 @@ NAME	=	libftprintf.a
 
 NAME_B	=	libftprintf_bonus.a
 
-CFLAGS	=	-Wall -Wextra -Werror -g3
+CFLAGS	=	-Wall -Wextra -Werror
 
 SRC		=	ft_printf.c ft_converters.c
 
 SRC_B	=	ft_printf_bonus.c ft_print_value_bonus.c ft_flags_bonus.c \
-			ft_converters_bonus.c ft_lenght_flags.c
+			ft_converters_bonus.c ft_lenght_flags_bonus.c
 
 HEAD	=	ft_printf.h
 

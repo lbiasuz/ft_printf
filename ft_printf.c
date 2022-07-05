@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:56:33 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/03 16:54:06 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/05 00:15:45 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ char	*alloc_char_or_string(va_list list, int type_flag)
 	if (type_flag == 'c')
 	{
 		value = malloc(sizeof(char) * 2);
+		if (!value)
+			return (NULL);
 		value[0] = va_arg(list, int);
 		value[1] = 0;
 	}
