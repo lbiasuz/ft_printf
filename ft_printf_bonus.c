@@ -6,11 +6,12 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 23:04:29 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/05 02:31:01 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/04 22:58:11 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
+#include "stdio.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -26,15 +27,15 @@ int	ft_printf(const char *str, ...)
 		if (*str == '%')
 		{
 			flags = get_flags(str + 1);
-			value = get_converted_value(args, *(str + 1));
-			printed += print_value(value, flags);
+			value = get_converted_value(args, *(str + ft_strlen(flags)));
+			printed += print_value(value, flags) - 1;
+			str += ft_strlen(flags);
+			free(flags);
 		}
 		else
-		{
 			ft_putchar_fd(*str, 1);
-			printed++;
-		}
-		str += printed + 1;
+		printed++;
+		str++;
 	}
 	va_end(args);
 	return (printed);
