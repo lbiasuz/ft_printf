@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 14:44:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/05 00:48:24 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/05 21:11:10 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int	ft_find_number_flag(char *str)
 	{
 		if (ft_isdigit(str[i]) && i == 0)
 			return (ft_atoi(str));
-		else if (ft_isdigit(str[i]) && !ft_isdigit(str[i -1]))
-			return (ft_atoi(str));
+		else if (ft_isdigit(str[i]) && !ft_isdigit(str[i - 1]))
+			return (ft_atoi(str + i));
 		i++;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:56:33 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/05 00:15:45 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/05 21:25:04 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ int	handle_print_conversion(va_list args, int cflag)
 		value = alloc_char_or_string(args, cflag);
 	else
 		value = ft_strdup("%");
-	len = ft_strlen(value);
+	len = (1 * cflag == 'c' && *value == 0) + ft_strlen(value);
 	ft_putstr_fd(value, 1);
-	if (value != NULL && ft_strchr("csdiuxX%", cflag))
+	if (value != NULL && ft_strchr("csdiuxXp%", cflag))
 		free(value);
-	return ((1 * cflag == 'c' && *value == 0) + len);
+	return (len);
 }
 
 char	*alloc_char_or_string(va_list list, int type_flag)
