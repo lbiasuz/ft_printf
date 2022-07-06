@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 22:12:39 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/05 00:41:47 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/05 20:43:48 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	print_value(char *value, char *flags)
 	value = pass_value(value, temp);
 	ft_putstr_fd(value, 1);
 	lenght = ft_strlen(value);
+	if (!(*value))
+		lenght = 1;
 	free(value);
 	return (lenght);
 }
