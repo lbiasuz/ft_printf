@@ -6,12 +6,11 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 21:38:45 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/04 22:12:27 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/05 22:11:23 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-#include "stdio.h"
 
 char	*get_flags(const char *str)
 {
