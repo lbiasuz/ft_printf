@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 22:11:38 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/07/05 23:12:06 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/07/08 17:40:42 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C libft
-	ar rcT $(NAME) $(OBJ) libft/libft.a
+	cp libft/libft.a $(NAME)
+	ar r $(NAME) $(OBJ)
 
 bonus: $(NAME_B)
 	make OBJ="$(OBJ_B)"

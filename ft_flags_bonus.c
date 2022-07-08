@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 21:38:45 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/05 22:11:23 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/08 17:43:08 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*get_flags(const char *str)
 	unsigned int	lenght;
 
 	lenght = 0;
-	while (!ft_strchr("csiduxX%", str[lenght]))
+	while (!ft_strchr("csidupxX%", str[lenght]))
 	{
 		if (!ft_strchr(" -+#.0123456789", str[lenght]))
 			return (NULL);
