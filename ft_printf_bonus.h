@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:56:31 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/03 23:40:10 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/09 23:11:33 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ char			*get_converted_value(va_list list, int converter);
 char			*alloc_char_or_string(va_list list, int type_flag);
 char			*get_flags(const char *str);
 char			*ft_precision_flag(char *str, char *flags);
-char			*ft_blank_flag(char *str, char *flags);
+char			*ft_blank_flag(char *str, char *flags, int converter);
 char			*ft_sign_flag(char *str, char *flags);
 char			*ft_hashtag_flag(char *str, char *flags);
 unsigned int	ft_zeroes_flag(char *str);
 char			*ft_lenght_flag(char *str, char *flags);
 char			*pass_value(char *value, char *temp);
-int				print_value(char *value, char *flags);
+int				print_value(char *value, char *flags, int converter);
 
 #endif

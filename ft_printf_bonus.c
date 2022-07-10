@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 23:04:29 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/05 20:35:40 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/09 21:40:21 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_printf(const char *str, ...)
 		{
 			flags = get_flags(str + 1);
 			value = get_converted_value(args, *(str + ft_strlen(flags)));
-			printed += print_value(value, flags) - 1;
+			printed += print_value(value, flags, *(str + ft_strlen(flags))) - 1;
 			str += ft_strlen(flags);
 			free(flags);
 		}

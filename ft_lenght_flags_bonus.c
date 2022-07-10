@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 14:44:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/05 21:11:10 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/09 23:14:41 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,14 @@ char	*ft_lenght_flag(char *str, char *flags)
 
 unsigned int	ft_zeroes_flag(char *str)
 {
-	return (ft_strchr(str, '0') && !ft_isdigit(*(ft_strchr(str, '0') - 1)));
+	if (ft_strchr(str, '0'))
+	{
+		if (ft_strchr(str, '0') == str)
+			return (1);
+		else if (!ft_isdigit(*ft_strchr(str, '0') - 1))
+			return (1);
+	}
+	return (0);
 }
 
 int	ft_find_number_flag(char *str)

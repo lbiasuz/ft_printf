@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 21:38:45 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/07/08 17:43:08 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/07/09 23:15:57 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,15 @@ char	*ft_precision_flag(char *str, char *flags)
 	return (value);
 }
 
-char	*ft_blank_flag(char *str, char *flags)
+char	*ft_blank_flag(char *str, char *flags, int converter)
 {
 	char	*value;
 
-	if (ft_strchr(flags, ' '))
+	if (
+		ft_strchr(flags, ' ')
+		&& !(ft_strchr(str, '+') || ft_strchr(str, '-'))
+		&& *str != 0 && (ft_isdigit(*str) && converter != 's')
+	)
 		value = ft_strjoin(" ", str);
 	else
 		value = str;
